@@ -1,21 +1,25 @@
 import React from "react";
 import './Card.css';
 
-export default function Card({ name, species, gender, image, onClose }) {
+export default function Card(props) {
+	let handleClose = (id) => {
+		props.onClose(id);
+		// props.deleteCharacterFavourite(Number(event.currentTarget.value));
+	};
    return (
       <div className="main-container-card">
          <div className="container-card">
             <div className="container-btn-card">
-               <button className="btn-card" onClick={onClose}>X</button>
+               <button className="btn-card" onClick={() => handleClose(props.id)}>X</button>
             </div>
             <div className="container-names-card">
                <div className="container-characteristics">
-                  <h2 className="species-card">{species}</h2>
-                  <h2 className="gender-card">{gender}</h2>
+                  <h2 className="species-card">{props.species}</h2>
+                  <h2 className="gender-card">{props.gender}</h2>
                </div>
                <div className="container-image-card">
-                  <img className="image-card" src={image} alt="img" />
-                  <h2 className="name-card">{name}</h2>
+                  <img className="image-card" src={props.image} alt="img" />
+                  <h2 className="name-card">{props.name}</h2>
                </div>
             </div>
          </div>

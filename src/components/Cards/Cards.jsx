@@ -7,7 +7,7 @@ export default function Cards(props) {
    return (
    <div className='container-main-cards'>
    <div className='container-cards'>
-      {
+      {/* {
          characters.map(({ name, species, gender, image }, index) => {
             return <Card
                key={index}
@@ -15,10 +15,26 @@ export default function Cards(props) {
                gender={gender}
                species={species}
                image={image}
-               onClose={() => window.alert("Emulamos que se cierra la card")}
+               onClose={props.onClose}
             />
          })
-      }
+      } */}
+      {characters ? (
+					characters.map((character) => (
+						<Card
+							key={character.id}
+							id={character.id}
+							name={character.name}
+							species={character.species}
+							gender={character.gender}
+							image={character.image}
+							status={character.status}
+							onClose={props.onClose}
+						/>
+					))
+				) : (
+					<h3>No hay persoanjes</h3>
+				)}
    </div>
    </div>
    );
