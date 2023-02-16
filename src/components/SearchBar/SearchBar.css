@@ -1,0 +1,16 @@
+.main-container-search{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.bar-search{
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+}
+.btn-search{
+    background: limegreen;
+    border: none;
+    border-radius: 3px;
+}

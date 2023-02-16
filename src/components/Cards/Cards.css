@@ -1,0 +1,8 @@
+.container-main-cards{
+    display: flex;
+    justify-content: center;
+}
+.container-cards{
+    display: flex;
+    gap: 100px;
+}
