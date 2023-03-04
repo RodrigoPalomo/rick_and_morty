@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // COMPONENTES
 import Cards from "./components/Cards/Cards.jsx";
 import Nav from "./components/Nav/Nav";
+import About from "./components/About/About";
+import Detail from "./components/Detail/Detail";
 // COMPONENTES
 
 function App() {
@@ -31,10 +33,11 @@ function App() {
   return (
     <div className="App" style={{ padding: "25px" }}>
       <Nav onSearch={onSearch} />
-      <hr />
-      <div>
-        <Cards onClose={onClose} characters={characters} />
-      </div>
+      <Routes>
+        <Route path="/home" element={<Cards onClose={onClose} characters={characters} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail:detailId" element={<Detail />} />
+      </Routes>
       <hr />
     </div>
   );
