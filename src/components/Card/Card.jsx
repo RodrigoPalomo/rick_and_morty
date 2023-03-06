@@ -1,5 +1,6 @@
 import React from "react";
 import './Card.css';
+import { Link } from "react-router-dom";
 
 export default function Card(props) {
 	let handleClose = (id) => {
@@ -19,7 +20,9 @@ export default function Card(props) {
                </div>
                <div className="container-image-card">
                   <img className="image-card" src={props.image} alt="img" />
+                  <Link to={`detail/${props.id}`} >
                   <h2 className="name-card">{props.name}</h2>
+                  </Link>
                </div>
             </div>
          </div>

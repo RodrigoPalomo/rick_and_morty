@@ -13,14 +13,14 @@ function App() {
   const [characters, setCharacters] = useState([]);
 
   let onClose = (id) => {
-    // const newCharacters = characters.filter((character) => character.id !== id);
-    // setCharacters(newCharacters);
-    setCharacters(characters.filter((character) => character.id !== id));
+    const newCharacters = characters.filter((character) => character.id !== id);
+    setCharacters(newCharacters);
+    // setCharacters(characters.filter((character) => character.id !== id));
   };
 
   function onSearch(character) {
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
@@ -34,7 +34,7 @@ function App() {
     <div className="App" style={{ padding: "25px" }}>
       <Nav onSearch={onSearch} />
       <Routes>
-        <Route path="/home" element={<Cards onClose={onClose} characters={characters} />} />
+        <Route path="/" element={<Cards onClose={onClose} characters={characters} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail:detailId" element={<Detail />} />
       </Routes>
