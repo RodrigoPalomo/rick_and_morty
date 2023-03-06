@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Detail = () => {
   const { detailId } = useParams();
@@ -18,15 +19,17 @@ const Detail = () => {
         window.alert("No hay personajes con ese ID");
       });
     return setCharacter({});
-  }, [id]);
+  }, [detailId]);
 
-
-  console.log(params)
   return (
     <div>
-      <h1>
-        Detail
-      </h1>
+      <Link><button>Home</button></Link>
+      <p>{character?.name}</p>
+      <p>{character?.status}</p>
+      <p>{character?.species}</p>
+      <p>{character?.gender}</p>
+      <p>{character?.origin?.name}</p>
+      <img src={character?.image} alt={character?.name} />
     </div>
   )
 }
