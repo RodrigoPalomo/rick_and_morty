@@ -6,7 +6,7 @@ export default function Cards(props) {
 
    return (
       <div className='container-main-cards'>
-         <div className='container-cards'>   
+         <div className='container-cards'>
             {characters ? (
                characters.map((character) => (
                   <Card
