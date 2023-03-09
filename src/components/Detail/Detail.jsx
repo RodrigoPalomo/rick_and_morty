@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
-// test
+// test1
 
 const Detail = () => {
   const { detailId } = useParams();
